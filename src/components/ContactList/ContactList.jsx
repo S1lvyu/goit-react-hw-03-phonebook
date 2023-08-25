@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactItem from 'components/ContactItem/ContactItem';
 import styles from './ContactList.module.css';
+import PropTypes from 'prop-types';
 
 export default function ContactList({ contacts, filter, onDelete }) {
   const filteredContacts = contacts.filter(contact => {
@@ -19,3 +20,8 @@ export default function ContactList({ contacts, filter, onDelete }) {
     </ul>
   );
 }
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  filter: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};

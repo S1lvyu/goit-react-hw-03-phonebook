@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import style from './ContactForm.module.css';
+import PropTypes from 'prop-types';
+
 export default function ContactForm({ contacts, setContacts }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -66,3 +68,7 @@ export default function ContactForm({ contacts, setContacts }) {
     </form>
   );
 }
+ContactForm.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  seContacts: PropTypes.func,
+};

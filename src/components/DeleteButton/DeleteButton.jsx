@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './DeleteButton.module.css';
+import PropTypes from 'prop-types';
+
 export default function DeleteButton({ contact, onDelete }) {
   return (
     <button
@@ -11,3 +13,7 @@ export default function DeleteButton({ contact, onDelete }) {
     </button>
   );
 }
+DeleteButton.propTypes = {
+  contact: PropTypes.object.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};

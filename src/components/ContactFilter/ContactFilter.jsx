@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './ContactFilter.module.css';
+import PropTypes from 'prop-types';
+
 export default function ContactFilter({ filter, setFilter }) {
   return (
     <label className={styles.name}>
@@ -15,3 +17,7 @@ export default function ContactFilter({ filter, setFilter }) {
     </label>
   );
 }
+ContactFilter.propTypes = {
+  filter: PropTypes.string,
+  setFilter: PropTypes.func,
+};

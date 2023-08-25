@@ -1,6 +1,8 @@
 import React from 'react';
 import DeleteButton from 'components/DeleteButton/DeleteButton';
 import styles from './ContactItem.module.css';
+import PropTypes from 'prop-types';
+
 export default function ContactItem({ contact, onDelete }) {
   return (
     <li className={styles.item}>
@@ -9,3 +11,7 @@ export default function ContactItem({ contact, onDelete }) {
     </li>
   );
 }
+ContactItem.propTypes = {
+  contact: PropTypes.object.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
